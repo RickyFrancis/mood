@@ -32,6 +32,8 @@ model JournalEntry {
   userId   String
   User     User      @relation(fields: [userId], references: [id])
   analysis Analysis?
+
+  @@unique([userId, id])
 }
 
 model Analysis {
